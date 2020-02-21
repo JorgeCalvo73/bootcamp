@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo formularios</title>
+</head>
+
+<body>
+    <form method="get">
+        <section>
+            <fieldset>
+              <legend>About you</legend>
+              <p>
+                <label for="nombre">
+                  <span>Nombre: </span>
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="nombre" name="nombreusuario">
+              </p>
+              <p>
+                <label for="apellido">
+                  <span>Apellido: </span>
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="apellido" name="apellidousuario">
+              </p>
+
+              <p>
+                <label for="fechanacimiento">
+                  <span>Fecha de nacimiento:</span>
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="date" id="fechanac" name="fechanacimiento">
+              </p>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Lenguaje favorito</legend>
+                    <p>
+                      <label for="title_1">
+                        <input type="checkbox" id="title_1" name="title" value="J">
+                        JavaScript
+                      </label>
+                    </p>
+                    <p>
+                      <label for="title_2">
+                        <input type="checkbox" id="title_2" name="title" value="N" >
+                        Node
+                      </label>
+                    </p>
+                    <p>
+                      <label for="title_3">
+                        <input type="checkbox" id="title_3" name="title" value="P">
+                        PHP
+                      </label>
+                    </p>
+              </fieldset>
+
+              <fieldset>
+                <legend>IDE favorito</legend>
+                    <p>
+                      <label for="title_1">
+                        <input type="radio" id="title_1" name="title" value="A">
+                        IntelliJ
+                      </label>
+                    </p>
+                    <p>
+                      <label for="title_2">
+                        <input type="radio" id="title_2" name="title" value="K" >
+                        Visual Studio Code
+                      </label>
+                    </p>
+                    <p>
+                      <label for="title_3">
+                        <input type="radio" id="title_3" name="title" value="Q">
+                        Atom
+                      </label>
+                    </p>
+              </fieldset>
+
+              <fieldset>
+                <legend>SO Favorito</legend>
+                    <p>
+                      <label for="title_1">
+                        <input type="radio" id="title_1" name="title" value="A">
+                        Android
+                      </label>
+                    </p>
+                    <p>
+                      <label for="title_2">
+                        <input type="radio" id="title_2" name="title" value="K" >
+                        iOS
+                      </label>
+                    </p>
+              </fieldset>
+
+            
+        </section>
+        <p>
+
+            <label for="comments">Comentarios</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+
+            
+        </p>
+        <section>
+            <p> <button type="reset">Reset</button> <button type="submit">Enviar</button> </p>
+        </section>
+    </form>
+</body>
+
+</html>
