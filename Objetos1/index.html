@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+</body>
+<script>
+    let bandInfo;
+
+    // Add your code here
+
+    let band = {
+
+        name: 'Green Day',
+        nationality: 'americana',
+        genre: 'punk-rock',
+        members: '3',
+        formed: '1987',
+        split: 'false',
+        albums: [{ name: 'Dookie', release: '1994' }, { name: 'A', release: '2005' }]
+    }
+
+    bandInfo = ('Nombre: ' + band.name + ' Nacionalidad: ' + band.genre + ' Álbum 1: ' + band.albums[0].name +' '+ band.albums[0].release + ' Álbum 2: ' + band.albums[0].name +' '+ band.albums[0].release);
+
+
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+</script>
+
+</html>
