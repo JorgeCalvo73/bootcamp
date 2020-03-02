@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <video id="player" controls autoplay></video>
+    <button id="capture">Capturar</button>
+    <canvas id="snapshot" width=320 height=240></canvas>
+    <div id="snapshot"></div>
+
+    <script>
+        var player = document.getElementById('player');
+        var snapshotCanvas = document.getElementById('snapshot');
+        var captureButton = document.getElementById('capture');
+
+        var handleSuccess = function (stream) {
+            // Attach the video stream to the video element and autoplay.
+            player.srcObject = stream;
+        };
+
+        captureButton.addEventListener('click', function () {
+
+            const canvas = document.createElement('canvas');
+            // Draw the video frame to the canvas.
+
+            var context = canvas.getContext('2d');
+            canvas.width = 320;
+            canvas.height = 400;
+
+            context.drawImage(player, 0, 0, canvas.width, canvas.height);
+            snapshotCanvas.appendChild(picture);
+
+        });
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(handleSuccess);
+    </script>
+</body>
+
+
+
+</html>
