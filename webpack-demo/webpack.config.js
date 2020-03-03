@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
@@ -21,9 +22,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false
+    }),
     new CopyPlugin([
-      { from: 'source', to: 'dest' },
-      { from: 'other', to: 'public' },
+      { from: 'src/index.html', to: 'index.html' },
+    ]),
+    new CopyPlugin([
+      { from: 'src/styles.css', to: 'styles.css' },
     ]),
   ],
 };
