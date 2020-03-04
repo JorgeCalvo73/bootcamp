@@ -79,6 +79,8 @@ function openWindow(icon, name, item) {
         const deleteTask = document.querySelector('.modal-container');
         deleteTask.className = ('modal-container.open');
 
+        
+
         item.remove();
 
     });
