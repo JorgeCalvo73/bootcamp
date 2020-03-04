@@ -81,6 +81,8 @@ function openWindow(icon, name, item) {
 
         
 
+        /*Falta poner el borrar al yes, en el no poner que cambie la clase de nuevo, y que muestre el nombre con el name*/
+
         item.remove();
 
     });
