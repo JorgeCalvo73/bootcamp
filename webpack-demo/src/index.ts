@@ -67,7 +67,25 @@ input.onkeyup = (e) => {
         input.value = '';
 
         contar();
+
+        openWindow(icon, span, listItem);
     }
+}
+
+function openWindow(icon, name, item) {
+
+    icon.addEventListener('click', () => {
+
+        const deleteTask = document.querySelector('.modal-container');
+        deleteTask.className = ('modal-container.open');
+
+        item.remove();
+
+    });
+
+
+
+
 }
 
 
