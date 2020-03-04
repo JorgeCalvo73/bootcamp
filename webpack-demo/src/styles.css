@@ -17,6 +17,12 @@ h1, h2, h3, h4 {
     font-family: 'Roboto Slab', cursive;
 }
 
+/*Para que al pasar el ratón por encima tenga forma de puntero*/
+
+i.material-icons {
+    cursor: pointer;
+}
+
 .button {
     cursor: pointer;
     background: darkslategrey;
@@ -55,6 +61,7 @@ main {
     background: white;
     margin: 0 auto;
     border-radius: 2px;
+    background: white;
 }
 
 main ul {
@@ -71,6 +78,27 @@ main ul li {
     margin: 10px 0;
     align-content: center;
     justify-content: space-between;
+}
+
+/*Esto es para cuando vamos a modificar la tarea, tiene que 
+  estar escondido por defecto*/
+main ul li.updating div, 
+main ul li.updating i.btn-delete {
+    display: none;
+}
+
+/*Para el input a la hora de modificar la tarea*/
+main ul li.updating input {
+    width: 100%;
+    padding: 10px 5px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid darkgrey;
+}
+
+/*Cuando completamos la tarea se tiene que tachar el texto de la tarea*/
+main ul li input:checked+span {
+    text-decoration: line-through;
 }
 
 main div.info {
