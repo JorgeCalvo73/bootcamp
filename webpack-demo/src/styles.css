@@ -1,23 +1,31 @@
-/*GENERAL*/
+/* General */
 
 html {
     box-sizing: border-box;
 }
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    background: lightgrey;
+    margin: 0;
+    padding: 5px;
     color: darkslategrey;
     font-weight: lighter;
-    background: lightgrey;
-    padding: 5px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', cursive;
 }
-
-/*Para que al pasar el ratón por encima tenga forma de puntero*/
 
 i.material-icons {
     cursor: pointer;
@@ -25,20 +33,32 @@ i.material-icons {
 
 .button {
     cursor: pointer;
+    outline: none;
+    border: none;
     background: darkslategrey;
+    padding: 5px 10px;
     color: white;
     border-radius: 3px;
-    border: none;
-    padding: 5px, 10px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.button.large {
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+.button:active {
+    box-shadow: none;
 }
 
 .button:disabled {
     cursor: default;
     background: darkgrey;
     color: lightgrey;
+    box-shadow: none;
 }
 
-/*HEADER*/
+/* Header */
 
 header h1 {
     font-size: 30px;
@@ -46,10 +66,10 @@ header h1 {
     text-align: center;
 }
 
-/*MAIN*/
+/* Task */
 
-main #addTaskInput {
-    width: 90%;
+main #taskInput {
+    width: 100%;
     padding: 12px;
     margin: 4px 0;
     border: none;
@@ -57,11 +77,11 @@ main #addTaskInput {
 }
 
 main {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
     max-width: 400px;
     background: white;
     margin: 0 auto;
     border-radius: 2px;
-    background: white;
 }
 
 main ul {
@@ -80,14 +100,15 @@ main ul li {
     justify-content: space-between;
 }
 
-/*Esto es para cuando vamos a modificar la tarea, tiene que 
-  estar escondido por defecto*/
-main ul li.updating div, 
-main ul li.updating i.btn-delete {
+main ul li div {
+    display: flex;
+    align-items: baseline;
+}
+
+main ul li.updating div, main ul li.updating i.btn-delete {
     display: none;
 }
 
-/*Para el input a la hora de modificar la tarea*/
 main ul li.updating input {
     width: 100%;
     padding: 10px 5px;
@@ -96,7 +117,6 @@ main ul li.updating input {
     border-bottom: 1px solid darkgrey;
 }
 
-/*Cuando completamos la tarea se tiene que tachar el texto de la tarea*/
 main ul li input:checked+span {
     text-decoration: line-through;
 }
@@ -120,7 +140,7 @@ main div.info div {
     grid-gap: 10px;
 }
 
-/*FOOTER*/
+/* Footer */
 
 footer {
     margin-top: 15px;
@@ -142,9 +162,9 @@ footer p a:hover {
     text-decoration: underline;
 }
 
-/*MODAL*/
+/* Modal */
 
-.modal-container {
+.modal {
     display: none;
     position: fixed;
     top: 0;
@@ -154,11 +174,11 @@ footer p a:hover {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.modal-container.open {
+.modal.open {
     display: block;
 }
 
-.modal-container .modal {
+.modal .box {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-gap: 10px;
@@ -170,18 +190,18 @@ footer p a:hover {
     margin: 0 auto;
 }
 
-.modal-container .modal * {
+.modal .box * {
     margin: 0;
 }
 
-.modal-container .modal div {
+.modal .box div {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px;
 }
 
 @media screen and (min-width: 350px) {
-    .modal-container .modal {
+    .modal .box {
         margin-top: 3vw;
     }
 }

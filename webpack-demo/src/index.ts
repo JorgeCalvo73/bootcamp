@@ -77,22 +77,28 @@ function openWindow(icon, name, item) {
     icon.addEventListener('click', () => {
 
         const deleteTask = document.querySelector('.modal-container');
+        const yesButton = document.querySelector('#yesButton');
+        const noButton = document.querySelector('#noButton');
+        const askDelete = document.querySelector('#askDelete');
+
         deleteTask.className = ('modal-container.open');
 
-        
+        askDelete.textContent = name.textContent;
 
-        /*Falta poner el borrar al yes, en el no poner que cambie la clase de nuevo, y que muestre el nombre con el name*/
+        console.log(name.textContent);
 
-        item.remove();
+        yesButton.addEventListener('click', () => {
+            item.remove();
+            const deleteTask = document.querySelector('#ventana');
+            deleteTask.classList.remove('open');
+            contar();
+
+        });
+
+        noButton.addEventListener('click', () => {
+            deleteTask.className = ('.modal-container');
+        });
+        /*Falta poner en el no que cambie la clase de nuevo NO FUNCIONA LO DE LA CLASE*/
 
     });
-
-
-
-
-}
-
-
-function deleteTask() {
-
 }
