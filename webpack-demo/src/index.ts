@@ -1,3 +1,8 @@
+import { Task } from "../task";
+import { TASKS } from "../mock-task";
+
+/*
+
 const list = document.querySelector('ul');
 const input = document.querySelector('input');
 const pending = document.querySelector('#pendingButton')
@@ -98,7 +103,25 @@ function openWindow(icon, name, item) {
         noButton.addEventListener('click', () => {
             deleteTask.className = ('.modal-container');
         });
-        /*Falta poner en el no que cambie la clase de nuevo NO FUNCIONA LO DE LA CLASE*/
+        //Falta poner en el no que cambie la clase de nuevo NO FUNCIONA LO DE LA CLASE
 
     });
+}*/
+
+// Elements
+
+const taskListElement: HTMLUListElement = document.querySelector('#taskList');
+
+// Data Functions
+
+function listTasks():Task[]{
+
+    return TASKS;
+
 }
+
+// HTML Functions
+
+// Events
+
+// Load
